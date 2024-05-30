@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 shadow-lg p-3 mb-5">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">Registrarse</div>
+                    <div class="card-body text-primary">
+                        <form action="/register" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre completo</label>
+                                <input id="name" name="name" type="text" class="form-control" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="user" class="form-label">Cuenta de usuario</label>
+                                <input id="user" name="user" type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pass" class="form-label">Password</label>
+                                <input id="pass" name="pass" type="password" class="form-control">
+                            </div>
+                            <div class="card-footer bg-transparent border-primary">
+                                <a href="/" type="button" class="btn btn-secondary">Cancelar</a>
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                        </form>
+                        <% if (typeof qr_code !== 'undefined') { %>
+                            <p>Escanea este código QR con tu aplicación de autenticación:</p>
+                            <img src="<%= qr_code %>" alt="QR Code">
+                            <br>
+                            <a href="login" type="button" class="btn btn-secondary">Volver</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
